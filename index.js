@@ -7,9 +7,6 @@ app.use(morgan('common'));
 
 const gapps = require('./playstore.js');
 
-app.listen(8080, () => {
-  console.log('server Started on Port 8080');
-});
 
 app.get('/apps', (req, res) => {
   let { sort, genres } = req.query;
@@ -53,3 +50,4 @@ app.get('/apps', (req, res) => {
 
   res.json(results);
 });
+module.exports = app;
